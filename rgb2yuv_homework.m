@@ -1,5 +1,6 @@
+function rgb2yuv_homework(image)
 % Read in image and convert to double
-rgbImage3 = im2double(imread('uah_color.jpg'));
+rgbImage3 = im2double(image);
 
 % Red Channel
 redChannel = rgbImage3(:,:,1);
@@ -10,13 +11,13 @@ greenChannel = rgbImage3(:,:,2);
 % Blue Channel
 blueChannel = rgbImage3(:,:,3);
 
-% Create an all black channel.
-allBlack = zeros(size(rgbImage3, 1), size(rgbImage3, 2));
+% % Create an all black channel.
+% allBlack = zeros(size(rgbImage3, 1), size(rgbImage3, 2));
 
-% Create color versions of the individual color channels.
-just_red = cat(3, redChannel, allBlack, allBlack);
-just_green = cat(3, allBlack, greenChannel, allBlack);
-just_blue = cat(3, allBlack, allBlack, blueChannel);
+% % Create color versions of the individual color channels.
+% just_red = cat(3, redChannel, allBlack, allBlack);
+% just_green = cat(3, allBlack, greenChannel, allBlack);
+% just_blue = cat(3, allBlack, allBlack, blueChannel);
 
 % Conversion matrix
 rgbTOyuv = cat(3, ...
@@ -27,6 +28,7 @@ rgbTOyuv = cat(3, ...
 % change from [0-1] to [0-255]
 changeTo256_01 = uint8(round(rgbTOyuv * 255));
 
+% Y, U, V Channels
 y_yuvGray1 = changeTo256_01(:,:,1);
 u_yuvGray2 = changeTo256_01(:,:,2);
 v_yuvGray3 = changeTo256_01(:,:,3);

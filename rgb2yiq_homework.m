@@ -1,5 +1,6 @@
+function rgb2yiq_homework(image)
 % Read in image and convert to double
-rgbImage2 = im2double(imread('uah_color.jpg'));
+rgbImage2 = im2double(image);
 
 % Red Channel
 red = rgbImage2(:,:,1);

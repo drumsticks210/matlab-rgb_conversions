@@ -1,6 +1,7 @@
-function rmse(signal1, signal2)
+function RMSE(signal1, signal2)
 
 %RMSE Root Mean Squared Error
-r = sqrt(sum((signal1(:) - signal2(:)) .^2)/ numel(signal1))
+RMSE = sqrt(sum((signal1(:) - signal2(:)) .^2)/ numel(signal1));
+
 
 

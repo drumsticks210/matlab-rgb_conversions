@@ -1,14 +1,15 @@
+function rgb2ycbcr_homework(image)
 % Import image
-img = im2double(imread('uah_color.jpg'));
+image_1 = im2double(image);
 
 % Red Channel
-red = img(:,:,1);
+red = image_1(:,:,1);
 
 % Green Channel
-green = img(:,:,2);
+green = image_1(:,:,2);
 
 % Blue Channel
-blue = img(:,:,3);
+blue = image_1(:,:,3);
 
 % Conversion matrix
 rgbTOycbcr = cat(3, ...
@@ -26,7 +27,6 @@ cr_ycbcrGray3 = changeTo256_03(:,:,3);
 
 
 % Display RGB and  YCbCr image
-% Display RGB and  YIQ image
 subplot(2, 2, 1); 
 imshow(changeTo256_03); title('RGB to YCbCr Image');
 
